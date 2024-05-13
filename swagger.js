@@ -13,20 +13,35 @@ const swaggerOptions = {
         Articulo: {
           type: 'object',
           required: ['nombre', 'precio'],
+
           properties: {
+
             _id: {
               type: 'string',
               description: 'ID único del artículo generado por MongoDB',
             },
+
+            codigo_del_producto:{
+              type: 'string',
+              description: 'Código general de Ferremas',
+            },
+
+            marca: {
+              type: 'string',
+              description: 'Marca del artículo',
+            },
+
+            codigo:{
+              type: 'string',
+              description: 'Código según categoría del artículo',
+            },
+
             nombre: {
               type: 'string',
               description: 'Nombre del artículo',
             },
-            descripcion: {
-              type: 'string',
-              description: 'Descripción del artículo',
-            },
-            precio: {
+
+            valor: {
               type: 'number',
               description: 'Precio del artículo',
             },
@@ -34,7 +49,6 @@ const swaggerOptions = {
               type: 'string',
               description: 'Nombre del archivo de imagen del artículo',
             },
-            // Agrega más propiedades según la estructura de tu modelo de Artículo
           },
         },
       },

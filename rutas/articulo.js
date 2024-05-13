@@ -1,35 +1,24 @@
-
 const express = require("express");
 const multer = require("multer");
 const ArticuloControlador = require("../controladores/articulo");
 
 const router = express.Router();
 
-
-
 const almacenamiento = multer.diskStorage({
-
     destination: function (req, file, cb) {
-
-        cb(null,'./imagenes/articulos/');
-
+        cb(null, './imagenes/articulos/');
     },
-
     filename: function (req, file, cb) {
-
-        cb(null,"articulo" + Date.now() + file.originalname);
-
+        cb(null, "articulo" + Date.now() + file.originalname);
     }
-})
+});
 
-const subidas = multer({storage: almacenamiento});
+const subidas = multer({ storage: almacenamiento });
 
-//ruta de prueba
-
+// Ruta de prueba
 router.get("/ruta-de-prueba", ArticuloControlador.prueba);
 
-
-//HTTP
+// HTTP
 
 /**
  * @swagger
